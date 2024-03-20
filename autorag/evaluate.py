@@ -1,5 +1,4 @@
 import time
-from typing import Dict
 
 
 from llama_index.core.evaluation import RetrieverEvaluator, FaithfulnessEvaluator

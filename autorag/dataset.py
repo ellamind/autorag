@@ -7,7 +7,6 @@ from loguru import logger
 from llama_index.core import Document
 from llama_index.core.evaluation import EmbeddingQAFinetuneDataset, generate_question_context_pairs
 from llama_index.core.node_parser import SentenceSplitter
-from llama_index.llms.openai import OpenAI
 from llama_index.llms.openrouter import OpenRouter
 from transformers import AutoTokenizer
 from typing import Dict, List
