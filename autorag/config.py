@@ -8,8 +8,9 @@ SWEEP_CONFIG = {
         # "embedding_id": {"values": ["intfloat/multilingual-e5-large", "deepset/gbert-large", "mixedbread-ai/mxbai-embed-large-v1"]},
         # "embedding_id": {"values": ["intfloat/multilingual-e5-large", "deepset/gbert-large", "deutsche-telekom/gbert-large-paraphrase-cosine"]},
         # "embedding_id": {"values": ["intfloat/multilingual-e5-large", "thenlper/gte-large", "BAAI/bge-large-en-v1.5"]},
-        "embedding_id": {"values": ["intfloat/multilingual-e5-large", "mixedbread-ai/mxbai-embed-large-v1"]},
-        # "embedding_id": {"values": ["intfloat/multilingual-e5-small", "intfloat/multilingual-e5-base", "intfloat/multilingual-e5-large"]},
+        # "embedding_id": {"values": ["intfloat/multilingual-e5-large", "mixedbread-ai/mxbai-embed-large-v1"]},
+        # "embedding_id": {"values": ["intfloat/multilingual-e5-large"]},
+        "embedding_id": {"values": ["intfloat/multilingual-e5-small", "intfloat/multilingual-e5-base", "intfloat/multilingual-e5-large"]},
         # "chunk_size": {"value": 512},
         # "retriever_top_k": {"values": [20, 10]},
         # "retriever_top_k": {"values": [10, 5, 2, 1]},
@@ -22,8 +23,9 @@ SWEEP_CONFIG = {
         # "reranker_id": {"values": [""]},
         "reranker_top_k": {"values": [3, 2, 1]},
         # "reranker_top_k": {"values": [2]},
-        # "llm_id": {"values": ["gpt-3.5-turbo", "openai/TheBloke/DiscoLM-120b-AWQ"]}
-        "llm_id": {"values": ["gpt-3.5-turbo"]}
+        "llm_id": {"values": ["gpt-3.5-turbo", "openai/TheBloke/DiscoLM-120b-AWQ"]}
+        # "llm_id": {"values": ["openai/TheBloke/DiscoLM-120b-AWQ"]}
+        # "llm_id": {"values": ["gpt-3.5-turbo"]}
     },
 }
 

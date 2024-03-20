@@ -7,12 +7,14 @@ This is an early prototype and therefore slow as hell.
 
 
 ## Installation
-```poetry install```
+```bash
+poetry install
+```
 
 ## Usage
 
 Set you pararmeters and models in `autorag/config.py` and run the following commands:
-```
+```bash
 poetry shell
 python autorag/main.py
 ```

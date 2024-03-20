@@ -35,11 +35,10 @@ def get_groovy(config: Dict):
     """
     llm_id = config["llm_id"]
 
-    #TODO: DiscoLM here
-    if "DISCO" in llm_id.upper():
+    if "DiscoLM" in llm_id:
         logger.info("FEEL THE GROOVE BABY!")
-        logger.info("💃🪩🕺"*50)
-        llm = LiteLLM(model=llm_id, api_base=os.getenv("ELLAMIND_API_BASE"), api_key=os.getenv("ELLAMIND_API_KEY"), max_tokens=8192)
+        logger.info("💃🪩🕺"*500)
+        llm = LiteLLM(model=llm_id, api_base=os.getenv("ELLAMIND_API_BASE"), api_key=os.getenv("ELLAMIND_API_KEY"), max_tokens=1024)
     else:
         logger.info("Meh!")
         llm = OpenAI(model=llm_id)
