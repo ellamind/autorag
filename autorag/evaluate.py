@@ -25,13 +25,16 @@ def get_retrieval_evaluator(retriever, node_postprocessors):
     )
 
 def get_response_evaluator():
-    evaluator_llm = OpenAI(model="gpt-3.5-turbo")
+    # evaluator_llm = OpenAI(model="gpt-3.5-turbo")
+    evaluator_llm = OpenAI(model="gpt-4-turbo-preview")
 
     logger.info("Setting up response evaluator")
     return FaithfulnessEvaluator(llm=evaluator_llm)
 
 def evaluate_response(query: str, query_engine: RetrieverQueryEngine, response_evaluator: FaithfulnessEvaluator):
+    logger.info(f"Query: {query}")
     response = query_engine.query(query)
+    logger.info(f"Response: {response}")
     eval_result = response_evaluator.evaluate_response(response=response)
     return eval_result.score
 
@@ -60,7 +63,9 @@ def evaluate():
             sample_expected = dataset.relevant_docs[query_id]
 
             retrieval_eval_result = retrieval_evaluator.evaluate(query, sample_expected)
+            logger.info(f"Retrieved texts: {retrieval_eval_result.retrieved_texts}")
             
+            logger.info(f"LLM: {config['llm_id']}")
             faithfulness_score = evaluate_response(query, query_engine, response_evaluator) # TODO: look into making this async
 
             eval_results["MRR"].append(retrieval_eval_result.metric_dict["mrr"].score)
